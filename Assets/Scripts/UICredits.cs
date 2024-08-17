@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UICredits : MonoBehaviour
 {
     [Header("Panels")]
-    [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject pauseMainPanel;
     [SerializeField] private GameObject creditsPanel;
     
     [Header("Buttons")]
@@ -26,7 +26,7 @@ public class UICredits : MonoBehaviour
     private void OnBackButtonClicked()
     {
         creditsPanel.SetActive(false);
-        pausePanel.SetActive(true);
+        pauseMainPanel.SetActive(true);
         Debug.Log("OnBackButtonClicked");
     }
 }

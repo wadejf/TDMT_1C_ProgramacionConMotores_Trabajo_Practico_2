@@ -5,6 +5,7 @@ public class UIMainMenu : MonoBehaviour
 {
     [Header("Panels")]
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject pauseMainPanel;
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject creditsPanel;
     
@@ -12,11 +13,18 @@ public class UIMainMenu : MonoBehaviour
     [SerializeField] private Button playButton;
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button creditsButton;
+    [SerializeField] private Button exitButton;
 
     private void Awake()
     {
         playButton.onClick.AddListener(OnPlayButtonClicked);
         settingsButton.onClick.AddListener(OnSettingsButtonClicked);
+        creditsButton.onClick.AddListener(OnCreditsButtonClicked);
+        exitButton.onClick.AddListener(OnExitButtonClicked);
+        
+        pauseMainPanel.SetActive(true);
+        settingsPanel.SetActive(false);
+        creditsPanel.SetActive(false);
     }
 
     private void OnDestroy()
@@ -28,19 +36,29 @@ public class UIMainMenu : MonoBehaviour
     
     private void OnPlayButtonClicked()
     {
+        GameManager.IsGamePaused = false;
+        Time.timeScale = 1f;
         pausePanel.SetActive(false);
-        Debug.Log("OnPlayButtonClicked");
     }
     
     private void OnSettingsButtonClicked()
     {
+        pauseMainPanel.SetActive(false);
         settingsPanel.SetActive(true);
-        Debug.Log("OnSettingsButtonClicked");
     }
     
     private void OnCreditsButtonClicked()
     {
+        pauseMainPanel.SetActive(false);
         creditsPanel.SetActive(true);
-        Debug.Log("OnCreditsButtonClicked");
+    }
+    
+    private static void OnExitButtonClicked()
+    { 
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+        
+        Application.Quit();
     }
 }

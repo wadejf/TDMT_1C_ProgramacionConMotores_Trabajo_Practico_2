@@ -6,11 +6,12 @@ using UnityEngine.UI;
 
 public class UISettings : MonoBehaviour
 {
-    private Movement _player1Movement;
-    private Movement _player2Movement;
+    [Header("PlayersMovements")]
+    [SerializeField] private Movement player1Movement;
+    [SerializeField] private Movement player2Movement;
     
     [Header("Panels")]
-    [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject pauseMainPanel;
     [SerializeField] private GameObject settingsPanel;
     
     [Header("Buttons")]
@@ -37,23 +38,23 @@ public class UISettings : MonoBehaviour
         sliderPlayer1Speed.onValueChanged.RemoveListener(OnSliderPlayer1SpeedChange);
         sliderPlayer2Speed.onValueChanged.RemoveListener(OnSliderPlayer2SpeedChange);
     }
-
-    private void OnBackButtonClicked()
-    {
-        settingsPanel.SetActive(false);
-        pausePanel.SetActive(true);
-        Debug.Log("OnBackButtonClicked");
-    }
     
     private void OnSliderPlayer1SpeedChange(float speed)
     {
-        _player1Movement.SetMovementSpeed(speed);
+        player1Movement.SetMovementSpeed(speed);
         sliderPlayer1SpeedText.text = speed.ToString(CultureInfo.InvariantCulture);
     }
     
     private void OnSliderPlayer2SpeedChange(float speed)
     {
-        _player2Movement.SetMovementSpeed(speed);
+        player2Movement.SetMovementSpeed(speed);
         sliderPlayer2SpeedText.text = speed.ToString(CultureInfo.InvariantCulture);
+    }
+
+    private void OnBackButtonClicked()
+    {
+        settingsPanel.SetActive(false);
+        pauseMainPanel.SetActive(true);
+        Debug.Log("OnBackButtonClicked");
     }
 }

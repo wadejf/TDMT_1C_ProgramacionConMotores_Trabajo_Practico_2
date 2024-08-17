@@ -9,8 +9,7 @@ public class GameManager : MonoBehaviour
     public static bool IsGamePaused;
     
     [SerializeField] private KeyCode pauseKey;
-    [SerializeField] private GameObject pausePanel;
-    
+    [SerializeField] private GameObject panelPause;
 
     private void Update()
     {
@@ -23,7 +22,7 @@ public class GameManager : MonoBehaviour
     private void HandleGamePause()
     {
         IsGamePaused = !IsGamePaused;
-        Time.timeScale = IsGamePaused ? 0 : 1;
-        pausePanel.SetActive(IsGamePaused);
+        Time.timeScale = IsGamePaused ? 0f : 1f;
+        panelPause.SetActive(IsGamePaused);
     }
 }

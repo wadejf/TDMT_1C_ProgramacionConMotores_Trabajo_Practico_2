@@ -3,8 +3,9 @@ using Random = UnityEngine.Random;
 
 public class Movement : MonoBehaviour
 {
-    [Header("Movement")]
-    [SerializeField] private float movementSpeed = 0.01f;
+    [Header("Movement")] 
+    private const float MaxSpeed = 10f;
+    [SerializeField] private float movementSpeed = 0.05f;
     [SerializeField] private KeyCode keyUp = KeyCode.W;
     [SerializeField] private KeyCode keyDown = KeyCode.S;
     [SerializeField] private KeyCode keyLeft = KeyCode.A;
@@ -74,8 +75,8 @@ public class Movement : MonoBehaviour
 
     public void SetMovementSpeed(float speed)
     {
-        if (speed is < 0.01f or > 1) return;
+        if (speed is < 0.01f or > 1f) return;
 
-        movementSpeed = speed;
+        movementSpeed = speed * MaxSpeed / 100;
     }
 }

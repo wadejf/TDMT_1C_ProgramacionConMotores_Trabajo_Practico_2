@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] private KeyCode pauseKey;
     [SerializeField] private GameObject panelPause;
+    [SerializeField] private GameObject panelPauseMain;
+    [SerializeField] private GameObject panelPauseSettings;
+    [SerializeField] private GameObject panelPauseCredits;
 
     private void Update()
     {
@@ -23,6 +26,10 @@ public class GameManager : MonoBehaviour
     {
         IsGamePaused = !IsGamePaused;
         Time.timeScale = IsGamePaused ? 0f : 1f;
+        
         panelPause.SetActive(IsGamePaused);
+        panelPauseMain.SetActive(IsGamePaused);
+        panelPauseSettings.SetActive(false);
+        panelPauseCredits.SetActive(false);
     }
 }

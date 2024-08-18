@@ -693,6 +693,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseKey: 27
   panelPause: {fileID: 2032944967}
+  panelPauseMain: {fileID: 1199665546}
+  panelPauseSettings: {fileID: 952947195}
+  panelPauseCredits: {fileID: 1026006345}
 --- !u!1 &282459075
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,7 +986,7 @@ Transform:
   m_GameObject: {fileID: 325432394}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.32, y: -1.22, z: 0}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2537,7 +2540,7 @@ Transform:
   m_GameObject: {fileID: 1136653375}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.26, y: 0.16, z: 0}
+  m_LocalPosition: {x: -3, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2555,7 +2558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3743c662d5a8e2b489e66863029a5523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0
+  movementSpeed: 0.05
   keyUp: 273
   keyDown: 274
   keyLeft: 276

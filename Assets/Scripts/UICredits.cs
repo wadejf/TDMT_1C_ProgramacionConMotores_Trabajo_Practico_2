@@ -27,6 +27,5 @@ public class UICredits : MonoBehaviour
     {
         creditsPanel.SetActive(false);
         pauseMainPanel.SetActive(true);
-        Debug.Log("OnBackButtonClicked");
     }
 }

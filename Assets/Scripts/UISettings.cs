@@ -55,6 +55,5 @@ public class UISettings : MonoBehaviour
     {
         settingsPanel.SetActive(false);
         pauseMainPanel.SetActive(true);
-        Debug.Log("OnBackButtonClicked");
     }
 }

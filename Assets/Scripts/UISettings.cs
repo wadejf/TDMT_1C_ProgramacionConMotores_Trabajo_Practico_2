@@ -42,13 +42,13 @@ public class UISettings : MonoBehaviour
     private void OnSliderPlayer1SpeedChange(float speed)
     {
         player1Movement.SetMovementSpeed(speed);
-        sliderPlayer1SpeedText.text = speed.ToString(CultureInfo.InvariantCulture);
+        sliderPlayer1SpeedText.text = speed.ToString("0.00");
     }
     
     private void OnSliderPlayer2SpeedChange(float speed)
     {
         player2Movement.SetMovementSpeed(speed);
-        sliderPlayer2SpeedText.text = speed.ToString(CultureInfo.InvariantCulture);
+        sliderPlayer2SpeedText.text = speed.ToString("0.00");
     }
 
     private void OnBackButtonClicked()
